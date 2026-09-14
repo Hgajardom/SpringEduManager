@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+<title>Cursos</title>
+
+</head>
+
+
+<body>
+
+
+<h1>Registro de Cursos</h1>
+
+
+<form action="/guardarCurso" method="post">
+
+
+<label>Nombre del curso:</label>
+
+<input type="text" name="nombre">
+
+
+<br>
+
+
+<label>Descripción:</label>
+
+<input type="text" name="descripcion">
+
+
+<br>
+
+
+<button type="submit">
+Guardar
+</button>
+
+
+</form>
+
+
+
+<h2>Cursos registrados</h2>
+
+
+<table border="1">
+
+
+<tr>
+
+<th>ID</th>
+<th>Nombre</th>
+<th>Descripción</th>
+
+</tr>
+
+
+
+<tr th:each="c : ${cursos}">
+
+
+<td th:text="${c.id}"></td>
+
+<td th:text="${c.nombre}"></td>
+
+<td th:text="${c.descripcion}"></td>
+
+
+</tr>
+
+
+</table>
+
+
+</body>
+
+</html>
